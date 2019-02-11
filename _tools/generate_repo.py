@@ -43,7 +43,7 @@ class Generator:
         self._generate_md5_file()
         self._generate_zip_files()
         # notify user
-        print "Finished updating addons xml, md5 files and zipping addons"
+        print("Finished updating addons xml, md5 files and zipping addons")
         
     def _pre_run ( self ):
 
@@ -63,7 +63,7 @@ class Generator:
 
         if os.path.isfile(addonid + os.path.sep + "addon.xml"):return
         
-        print "Create repository addon"
+        print("Create repository addon")
         
         with open (self.tools_path + os.path.sep + "template.xml", "r") as template:
             template_xml=template.read()
@@ -108,7 +108,7 @@ class Generator:
                 print e
 
     def _generate_zip_file ( self, path, version, addonid):
-        print "Generate zip file for " + addonid + " " + version
+        print("Generate zip file for " + addonid + " " + version)
         filename = path + "-" + version + ".zip"
         try:
             zip = zipfile.ZipFile(filename, 'w')
